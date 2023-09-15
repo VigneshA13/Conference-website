@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles.css">
+    <title>Countdown Timer</title>
+    <style>
+        body {
+    font-family: Arial, sans-serif;
+    text-align: center;
+    background-color: #f2f2f2;
+}
+
+.countdown {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 2rem;
+    background-color: #ffffff;
+    border-radius: 5px;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2);
+}
+
+.timer {
+    padding: 10px;
+    margin: 5px;
+    background-color: #3498db;
+    color: #ffffff;
+    border-radius: 5px;
+}
+
+.timer-label {
+    margin: 5px;
+    font-weight: bold;
+}
+
+    </style>
+</head>
+<body>
+    <div class="countdown">
+        <div class="timer" id="days">00</div>
+        <div class="timer-label">Days</div>
+        <div class="timer" id="hours">00</div>
+        <div class="timer-label">Hours</div>
+        <div class="timer" id="minutes">00</div>
+        <div class="timer-label">Minutes</div>
+        <div class="timer" id="seconds">00</div>
+        <div class="timer-label">Seconds</div>
+    </div>
+    <script src="script.js"></script>
+    <script>
+        // Set the target date (YYYY-MM-DD HH:MM:SS)
+const targetDate = new Date("2023-09-16T00:00:00").getTime();
+
+// Update the countdown every 1 second
+const countdownInterval = setInterval(updateCountdown, 1000);
+
+function updateCountdown() {
+    // Get the current date and time
+    const currentDate = new Date().getTime();
+
+    // Calculate the time remaining
+    const timeRemaining = targetDate - currentDate;
+
+    if (timeRemaining <= 0) {
+        clearInterval(countdownInterval);
+        document.getElementById("days").textContent = "00";
+        document.getElementById("hours").textContent = "00";
+        document.getElementById("minutes").textContent = "00";
+        document.getElementById("seconds").textContent = "00";
+        return;
+    }
+
+    // Calculate days, hours, minutes, and seconds
+    const days = Math.floor(timeRemaining / (1000 * 60 * 60 * 24));
+    const hours = Math.floor((timeRemaining % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+    const minutes = Math.floor((timeRemaining % (1000 * 60 * 60)) / (1000 * 60));
+    const seconds = Math.floor((timeRemaining % (1000 * 60)) / 1000);
+
+    // Display the countdown
+    document.getElementById("days").textContent = days.toString().padStart(2, "0");
+    document.getElementById("hours").textContent = hours.toString().padStart(2, "0");
+    document.getElementById("minutes").textContent = minutes.toString().padStart(2, "0");
+    document.getElementById("seconds").textContent = seconds.toString().padStart(2, "0");
+}
+
+
+    </script>
+</body>
+</html>

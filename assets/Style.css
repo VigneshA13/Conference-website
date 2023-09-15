@@ -1,0 +1,112 @@
+/* Google Font Import - Poppins */
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap");
+* {
+  margin: 0;
+  padding: 0;
+  font-family: "Poppins", sans-serif;
+}
+:root {
+  /* ===== Colors ===== */
+  --body-color: red;
+  --sidebar-color: #ececec;
+  --primary-color: #550000;
+  --primary-color-light: #f6f5ff;
+  --toggle-color: #ddd;
+  --text-color: #393838;
+  --navbar-color: #ececec;
+  --card-color: #550000c5;
+}
+
+body {
+  min-height: 100vh;
+  background-color: var(--body-color);
+  color: var(--primary-color-light);
+}
+
+.forms {
+  margin: 35px;
+  padding: 40px;
+  background-color: #12150b88;
+  color: white;
+  font-weight: 500;
+  border-radius: 15px;
+}
+.inputs {
+  color: white;
+  font-weight: 500;
+}
+.right {
+  color: white;
+  padding: 90px 10px;
+  font-weight: 600;
+  width: 75%;
+  text-align: center;
+}
+.right .dept {
+  color: #7eb1ff;
+  font-weight: bold;
+}
+
+.right .title {
+  color: #ffc54d;
+  font-weight: bolder;
+}
+.right .title1 {
+  color: #70a5f5;
+  font-weight: bolder;
+  /* font-family: ui-monospace; */
+  font-family: "Goudy Bookletter 1911", sans-serif;
+}
+.right .day {
+  font-size: 18px;
+  font-weight: 600;
+}
+
+/* second image */
+.up {
+  top: 0%;
+  border-radius: 0 0 200% 200%;
+  overflow: hidden;
+  margin: 0%;
+  position: absolute;
+  width: 100%;
+  height: 15%;
+  background-color: aqua;
+}
+.bottom {
+  bottom: 0%;
+  border-radius: 100% 100% 0 0;
+  overflow: hidden;
+  margin: 0%;
+  position: absolute;
+  width: 100%;
+  height: 15%;
+  background-color: aqua;
+}
+.cont_center {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  height: 50%;
+  width: 30%;
+  border-radius: 20px;
+  background-color: cornflowerblue;
+}
+
+/* about style */
+.about {
+  font-size: 20px;
+  text-align: justify;
+  margin: 0px;
+  font-weight: 400;
+}
+.about_title {
+  text-align: center;
+
+  color: black;
+}
+.about_title h4 {
+  font-weight: bolder;
+  font-size: 25px;
+}
